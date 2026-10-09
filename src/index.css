@@ -1,0 +1,272 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* Tsehaye Unique Pharmacy Luxury Theme Tokens */
+    --teal: #0d7377;
+    --teal-dark: #095456;
+    --teal-light: #14919b;
+    --cream: #f7f3eb;
+    --cream-dark: #ebe4d6;
+    --navy: #1a2f3a;
+    --navy-soft: #2a4554;
+    --gold: #c9a227;
+    --gold-soft: #e8d48b;
+    --white: #ffffff;
+    --text: #1a2f3a;
+    --text-muted: #5a6f7a;
+    --shadow: 0 20px 50px -20px rgba(13, 115, 119, 0.25);
+    --shadow-soft: 0 8px 30px rgba(26, 47, 58, 0.08);
+
+    /* Legacy Capsule + TsehayeRx Tokens */
+    --capsule-navy: #1a2f3a;
+    --capsule-navy-deep: #095456;
+    --capsule-teal: #0d7377;
+    --capsule-teal-dark: #095456;
+    --capsule-mint: #eef7f7;
+    --capsule-sage: #99BFBC;
+    --capsule-red: #EF4931;
+    --capsule-yellow: #c9a227;
+    
+    /* Paper & Cleanroom Tokens */
+    --ink: #1a2f3a;
+    --ink-soft: #5a6f7a;
+    --paper: #f7f3eb;
+    --paper-card: #FFFFFF;
+    --line: rgba(13, 115, 119, 0.12);
+    --line-soft: rgba(13, 115, 119, 0.06);
+    
+    /* Typography */
+    --font-outfit: 'Outfit', system-ui, sans-serif;
+    --font-display: 'Playfair Display', 'Fraunces', Georgia, serif;
+    --serif: 'Playfair Display', 'Fraunces', Georgia, serif;
+    --sans: 'Outfit', 'IBM Plex Sans', sans-serif;
+    --mono: 'JetBrains Mono', monospace;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--cream);
+    color: var(--text);
+    font-family: var(--font-outfit);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-display, .font-serif-heading {
+    font-family: var(--font-display);
+  }
+
+  .font-mono-spec {
+    font-family: var(--mono);
+  }
+}
+
+/* Floating background atmospheric orbs */
+.orb {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: 0;
+}
+.orb-1 {
+  width: 420px;
+  height: 420px;
+  background: var(--teal-light);
+  top: -100px;
+  right: -80px;
+}
+.orb-2 {
+  width: 300px;
+  height: 300px;
+  background: var(--gold-soft);
+  bottom: 20%;
+  left: -100px;
+}
+.orb-3 {
+  width: 250px;
+  height: 250px;
+  background: var(--teal);
+  bottom: -50px;
+  right: 10%;
+  opacity: 0.2;
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: linear-gradient(90deg, #e8d48b, #ffffff, #e8d48b);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.gradient-teal-text {
+  background: linear-gradient(135deg, #0d7377, #14919b);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Scroll Hint Line */
+.scroll-line {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.6), transparent);
+  animation: scrollPulse 1.8s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.4; transform: scaleY(0.7); }
+  50% { opacity: 1; transform: scaleY(1); }
+}
+
+/* Custom Keyframe Animations */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatSoft {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-rise {
+  animation: rise 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.4s ease-out both;
+}
+
+.animate-float {
+  animation: floatSoft 4s ease-in-out infinite;
+}
+
+/* Capsule Card Styling */
+.capsule-card {
+  background: #FFFFFF;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  box-shadow: 0 4px 16px -4px rgba(15, 60, 108, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.capsule-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px -8px rgba(15, 60, 108, 0.12);
+  border-color: rgba(15, 60, 108, 0.25);
+}
+
+.capsule-dark-card {
+  background: linear-gradient(155deg, var(--capsule-navy) 0%, var(--capsule-navy-deep) 100%);
+  color: #FFFFFF;
+  border-radius: 24px;
+  box-shadow: 0 20px 40px -15px rgba(15, 60, 108, 0.4);
+}
+
+.capsule-mint-card {
+  background: var(--capsule-mint);
+  border: 1px solid rgba(0, 134, 116, 0.15);
+  border-radius: 20px;
+}
+
+/* Ticket Specimen Card Styling */
+.ticket-card {
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  overflow: hidden;
+  background: #ffffff;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.ticket-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 32px -8px rgba(15, 60, 108, 0.12);
+  border-color: rgba(15, 60, 108, 0.3);
+}
+
+.ticket-visual {
+  height: 160px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ticket-body {
+  padding: 22px;
+  border-top: 1px dashed var(--line);
+  position: relative;
+  background: #ffffff;
+}
+
+.ticket-body::before,
+.ticket-body::after {
+  content: '';
+  position: absolute;
+  top: -9px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--paper);
+  box-shadow: inset 0 0 0 1px var(--line);
+}
+
+.ticket-body::before {
+  left: -9px;
+}
+
+.ticket-body::after {
+  right: -9px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--paper);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--capsule-teal);
+}

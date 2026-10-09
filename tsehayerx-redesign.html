@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TsehayeRx — Vitality through Science</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1B2430;
+    --ink-soft:#5B6779;
+    --paper:#E9EEF2;
+    --paper-alt:#DBE3E9;
+    --sage:#CFDAE0;
+    --forest:#2C4A52;
+    --forest-deep:#182F35;
+    --amber:#B8863E;
+    --amber-soft:#E9D6AE;
+    --amber-deep:#8E652A;
+    --line:rgba(27,36,48,0.16);
+    --line-soft:rgba(27,36,48,0.09);
+    --serif:'Fraunces', Georgia, serif;
+    --sans:'IBM Plex Sans', -apple-system, sans-serif;
+  }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--sans);
+    -webkit-font-smoothing:antialiased;
+    background-image:
+      radial-gradient(circle at 1px 1px, rgba(27,36,48,0.07) 1px, transparent 0);
+    background-size: 26px 26px;
+  }
+
+  a{ color:inherit; }
+  img{ max-width:100%; display:block; }
+
+  :focus-visible{
+    outline: 2.5px solid var(--amber-deep);
+    outline-offset: 3px;
+  }
+
+  .wrap{ max-width:1180px; margin:0 auto; padding:0 40px; }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; }
+  }
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(233,238,242,0.92);
+    backdrop-filter: blur(10px);
+    border-bottom:1px solid var(--line-soft);
+  }
+  .nav-row{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:20px 40px;
+    max-width:1180px; margin:0 auto;
+  }
+  .brand{ display:flex; align-items:center; gap:12px; text-decoration:none; }
+  .brand-mark{
+    width:38px; height:38px; border-radius:9px;
+    background: linear-gradient(160deg, var(--forest), var(--forest-deep));
+    display:flex; align-items:center; justify-content:center;
+    flex-shrink:0;
+  }
+  .brand-name{ font-family:var(--serif); font-size:1.32rem; font-weight:600; line-height:1; color:var(--ink); }
+  .brand-tag{ font-size:0.72rem; color:var(--ink-soft); margin-top:3px; letter-spacing:0.02em; }
+
+  nav.primary{ display:flex; gap:34px; }
+  nav.primary a{
+    text-decoration:none; color:var(--ink-soft); font-size:0.94rem; font-weight:500;
+    position:relative; padding-bottom:4px;
+  }
+  nav.primary a.active{ color:var(--ink); }
+  nav.primary a.active::after{
+    content:''; position:absolute; left:0; right:0; bottom:-2px; height:2px; background:var(--amber-deep); border-radius:2px;
+  }
+  .head-right{ display:flex; align-items:center; gap:16px; }
+  .license-chip{
+    display:flex; align-items:center; gap:8px;
+    font-size:0.8rem; color:var(--ink-soft);
+    border:1px solid var(--line); border-radius:20px; padding:7px 14px;
+  }
+  .license-chip strong{ color:var(--forest-deep); }
+  .cta-account{
+    background:var(--ink); color:var(--paper); text-decoration:none;
+    font-size:0.88rem; font-weight:500; padding:11px 20px; border-radius:22px;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{ padding:88px 0 60px; }
+  .hero-grid{
+    display:grid; grid-template-columns:1.05fr 0.85fr; gap:64px; align-items:center;
+  }
+  .hero h1{
+    font-family:var(--serif); font-weight:500; font-size:clamp(2.6rem, 4.4vw, 4.1rem);
+    line-height:1.05; margin:0 0 26px; color:var(--ink); letter-spacing:-0.01em;
+  }
+  .hero h1 em{ font-style:italic; color:var(--forest-deep); font-weight:500; }
+  .hero p.lede{
+    font-size:1.14rem; line-height:1.65; color:var(--ink-soft); max-width:46ch; margin:0 0 34px;
+  }
+  .hero-ctas{ display:flex; gap:14px; margin-bottom:44px; flex-wrap:wrap; }
+  .btn{
+    font-family:var(--sans); font-size:0.96rem; font-weight:500;
+    padding:15px 28px; border-radius:8px; text-decoration:none;
+    display:inline-flex; align-items:center; gap:8px; border:1px solid transparent;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .btn:hover{ transform: translateY(-1px); }
+  .btn-primary{ background:var(--forest-deep); color:var(--paper); }
+  .btn-primary:hover{ box-shadow:0 8px 20px rgba(30,50,38,0.28); }
+  .btn-ghost{ background:transparent; color:var(--ink); border-color:var(--line); }
+  .btn-ghost:hover{ border-color:var(--ink); }
+
+  .cred-row{ display:flex; flex-wrap:wrap; gap:28px; padding-top:28px; border-top:1px solid var(--line); }
+  .cred-item{ display:flex; align-items:center; gap:9px; font-size:0.88rem; color:var(--ink-soft); }
+  .cred-item svg{ flex-shrink:0; }
+
+  /* hero illustration */
+  .hero-art{ position:relative; }
+  .art-card{
+    background: linear-gradient(155deg, var(--forest) 0%, var(--forest-deep) 100%);
+    border-radius:22px; padding:0; aspect-ratio: 4/5; position:relative; overflow:hidden;
+    box-shadow: 0 30px 60px -20px rgba(22,36,28,0.35);
+  }
+  .art-card svg{ width:100%; height:100%; display:block; }
+  .floater{
+    position:absolute; background:var(--paper); border-radius:14px;
+    padding:14px 18px; box-shadow:0 16px 34px rgba(22,36,28,0.22);
+    display:flex; align-items:center; gap:12px; max-width:230px;
+  }
+  .floater-1{ top:24px; left:-22px; animation: rise 0.7s ease-out 0.15s both; }
+  .floater-2{ bottom:26px; right:-18px; animation: rise 0.7s ease-out 0.35s both; }
+  @keyframes rise{ from{ opacity:0; transform:translateY(14px);} to{opacity:1; transform:translateY(0);} }
+  .floater-icon{
+    width:34px; height:34px; border-radius:9px; background:var(--amber-soft);
+    display:flex; align-items:center; justify-content:center; flex-shrink:0;
+  }
+  .floater-title{ font-size:0.86rem; font-weight:600; color:var(--ink); line-height:1.2; }
+  .floater-sub{ font-size:0.76rem; color:var(--ink-soft); margin-top:2px; }
+
+  /* ---------- SECTION HEADERS ---------- */
+  .section{ padding:78px 0; }
+  .section-head{ max-width:640px; margin-bottom:52px; }
+  .section-head h2{
+    font-family:var(--serif); font-weight:500; font-size:clamp(2rem,3vw,2.7rem);
+    margin:0 0 14px; letter-spacing:-0.01em;
+  }
+  .section-head p{ font-size:1.05rem; color:var(--ink-soft); line-height:1.6; margin:0; }
+  .section-divider{ height:1px; background:var(--line); border:none; margin:0; }
+
+  /* ---------- SERVICES (asymmetric) ---------- */
+  .services-grid{
+    display:grid; grid-template-columns: 1.5fr 1fr; grid-template-rows:auto auto; gap:24px;
+  }
+  .service-card{
+    border-radius:18px; padding:38px; border:1px solid var(--line-soft);
+    background:var(--paper); position:relative;
+  }
+  .service-card.feature{ grid-row:span 2; background:var(--ink); color:var(--paper); }
+  .service-card.feature .service-desc{ color:rgba(233,238,242,0.72); }
+  .service-card.feature .service-link{ color:var(--amber-soft); }
+  .service-icon{
+    width:44px; height:44px; border-radius:11px; display:flex; align-items:center; justify-content:center;
+    background:var(--sage); margin-bottom:22px;
+  }
+  .service-card.feature .service-icon{ background:rgba(233,238,242,0.12); }
+  .service-title{ font-family:var(--serif); font-size:1.5rem; font-weight:500; margin:0 0 12px; }
+  .service-desc{ font-size:0.98rem; line-height:1.6; color:var(--ink-soft); margin:0 0 20px; max-width:42ch; }
+  .service-link{ font-size:0.92rem; font-weight:600; color:var(--forest-deep); text-decoration:none; }
+  .badge-24{
+    position:absolute; top:38px; right:38px; font-size:0.74rem; font-weight:600;
+    color:var(--forest-deep); background:var(--sage); padding:5px 12px; border-radius:20px;
+  }
+
+  /* ---------- FORMULATIONS (specimen tickets) ---------- */
+  .formulations-head{ display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:44px; gap:20px; flex-wrap:wrap; }
+  .view-all{ font-size:0.94rem; font-weight:600; color:var(--forest-deep); text-decoration:none; white-space:nowrap; }
+  .ticket-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:26px; }
+  .ticket{
+    border:1px solid var(--line); border-radius:16px; overflow:hidden; background:var(--paper);
+  }
+  .ticket-visual{
+    height:150px; position:relative; display:flex; align-items:center; justify-content:center;
+  }
+  .ticket-visual svg{ width:80%; height:80%; }
+  .tag-row{ position:absolute; top:14px; left:14px; right:14px; display:flex; justify-content:space-between; }
+  .tag{
+    font-size:0.72rem; font-weight:600; padding:5px 11px; border-radius:20px;
+    background:rgba(233,238,242,0.92); color:var(--ink);
+  }
+  .tag.rx{ background:var(--amber-soft); color:var(--amber-deep); }
+  .ticket-body{ padding:22px 22px 24px; border-top:1px dashed var(--line); position:relative; }
+  .ticket-body::before, .ticket-body::after{
+    content:''; position:absolute; top:-8px; width:16px; height:16px; border-radius:50%;
+    background:var(--paper-alt); background:var(--paper);
+    box-shadow: inset 0 0 0 1px var(--line);
+  }
+  .ticket-body::before{ left:-8px; }
+  .ticket-body::after{ right:-8px; }
+  .ticket-name{ font-family:var(--serif); font-size:1.22rem; font-weight:500; margin:0 0 8px; }
+  .ticket-desc{ font-size:0.9rem; color:var(--ink-soft); line-height:1.5; margin:0 0 18px; min-height:44px; }
+  .ticket-foot{ display:flex; justify-content:space-between; align-items:center; padding-top:16px; border-top:1px solid var(--line-soft); }
+  .ticket-price-label{ font-size:0.72rem; color:var(--ink-soft); display:block; margin-bottom:2px; }
+  .ticket-price{ font-family:var(--serif); font-size:1.2rem; font-weight:500; }
+  .ticket-btn{
+    font-size:0.84rem; font-weight:600; color:var(--ink); background:var(--sage);
+    padding:9px 16px; border-radius:8px; text-decoration:none;
+  }
+
+  /* ---------- UPLOAD CTA BAND ---------- */
+  .upload-band{
+    background: linear-gradient(135deg, var(--forest-deep), var(--ink));
+    border-radius:24px; padding:56px; color:var(--paper);
+    display:grid; grid-template-columns:1.3fr 0.9fr; gap:40px; align-items:center;
+  }
+  .upload-chip{
+    display:inline-block; font-size:0.78rem; font-weight:600; color:var(--amber-soft);
+    background:rgba(233,214,174,0.14); padding:6px 14px; border-radius:20px; margin-bottom:18px;
+  }
+  .upload-band h3{ font-family:var(--serif); font-weight:500; font-size:clamp(1.6rem,2.6vw,2.2rem); margin:0 0 16px; line-height:1.18; }
+  .upload-band p{ color:rgba(233,238,242,0.72); font-size:0.98rem; line-height:1.6; margin:0; max-width:46ch; }
+  .upload-actions{ display:flex; flex-direction:column; gap:12px; }
+  .btn-amber{ background:var(--amber); color:var(--ink); }
+  .btn-amber:hover{ box-shadow:0 10px 22px rgba(184,134,62,0.35); }
+  .btn-outline-light{ background:transparent; color:var(--paper); border-color:rgba(233,238,242,0.3); }
+  .btn-outline-light:hover{ border-color:var(--paper); }
+  .upload-actions .btn{ justify-content:center; }
+
+  /* ---------- TESTIMONIALS ---------- */
+  .quote-row{ display:grid; grid-template-columns:repeat(3,1fr); gap:0; }
+  .quote{ padding:8px 32px; position:relative; }
+  .quote:not(:first-child){ border-left:1px solid var(--line); }
+  .stars{ color:var(--amber-deep); font-size:0.95rem; letter-spacing:2px; margin-bottom:16px; }
+  .quote p{ font-family:var(--serif); font-style:italic; font-size:1.08rem; line-height:1.55; color:var(--ink); margin:0 0 20px; }
+  .quote-who{ font-size:0.86rem; color:var(--ink-soft); font-weight:500; }
+
+  /* ---------- CERT STRIP ---------- */
+  .cert-strip{
+    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;
+    padding:26px 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+  }
+  .cert-left{ display:flex; align-items:center; gap:10px; font-size:0.92rem; color:var(--forest-deep); font-weight:600; }
+  .cert-right{ display:flex; align-items:center; gap:22px; font-size:0.86rem; color:var(--ink-soft); }
+  .status-dot{ width:8px; height:8px; border-radius:50%; background:#4C7A5E; display:inline-block; margin-right:7px; }
+  .license-num{ font-variant-numeric: tabular-nums; color:var(--ink); font-weight:600; }
+
+  /* ---------- FOOTER ---------- */
+  footer{ background:var(--ink); color:rgba(233,238,242,0.86); padding:70px 0 30px; }
+  .footer-grid{ display:grid; grid-template-columns:1.4fr 1fr 1fr 1.1fr; gap:40px; margin-bottom:56px; }
+  .footer-brand{ display:flex; align-items:center; gap:12px; margin-bottom:18px; }
+  .footer-brand .brand-name{ color:var(--paper); }
+  footer p.desc{ font-size:0.92rem; line-height:1.65; color:rgba(233,238,242,0.6); max-width:36ch; margin:0 0 20px; }
+  .footer-meta{ font-size:0.86rem; color:rgba(233,238,242,0.6); display:flex; gap:9px; margin-bottom:6px; }
+  .footer-col h4{ font-size:0.82rem; font-weight:600; color:var(--amber-soft); margin:0 0 18px; }
+  .footer-col a{ display:block; text-decoration:none; color:rgba(233,238,242,0.78); font-size:0.94rem; margin-bottom:12px; }
+  .footer-col a:hover{ color:var(--paper); }
+  .contact-line{ font-size:0.94rem; margin-bottom:16px; }
+  .contact-line strong{ display:block; color:var(--paper); margin-bottom:2px; }
+  .contact-line span{ font-size:0.82rem; color:rgba(233,238,242,0.55); }
+  .emergency{
+    display:inline-block; margin-top:6px; font-size:0.86rem; font-weight:600; color:#E8A9A0;
+    border:1px solid rgba(232,169,160,0.35); padding:8px 14px; border-radius:8px;
+  }
+  .portal-box{ background:rgba(233,238,242,0.06); border:1px solid rgba(233,238,242,0.14); border-radius:14px; padding:22px; }
+  .portal-box h4{ display:flex; align-items:center; gap:8px; color:var(--paper); font-size:0.96rem; margin:0 0 10px; }
+  .portal-box p{ font-size:0.86rem; color:rgba(233,238,242,0.6); line-height:1.55; margin:0 0 16px; }
+  .footer-bottom{
+    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px;
+    padding-top:26px; border-top:1px solid rgba(233,238,242,0.14);
+    font-size:0.82rem; color:rgba(233,238,242,0.48);
+  }
+  .footer-bottom a{ text-decoration:none; color:rgba(233,238,242,0.55); margin-left:20px; }
+  .footer-bottom a:hover{ color:var(--paper); }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 980px){
+    .wrap{ padding:0 24px; }
+    .nav-row{ padding:18px 24px; }
+    nav.primary{ display:none; }
+    .hero-grid{ grid-template-columns:1fr; }
+    .hero{ padding:56px 0 40px; }
+    .hero-art{ order:-1; max-width:340px; margin:0 auto 20px; }
+    .services-grid{ grid-template-columns:1fr; }
+    .service-card.feature{ grid-row:auto; }
+    .ticket-grid{ grid-template-columns:1fr; }
+    .upload-band{ grid-template-columns:1fr; padding:36px; }
+    .quote-row{ grid-template-columns:1fr; gap:36px; }
+    .quote:not(:first-child){ border-left:none; border-top:1px solid var(--line); padding-top:32px; }
+    .footer-grid{ grid-template-columns:1fr 1fr; }
+    .cert-strip{ flex-direction:column; align-items:flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-row">
+    <a href="#" class="brand">
+      <span class="brand-mark">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3v18M3 12h18" stroke="#E9EEF2" stroke-width="2.4" stroke-linecap="round"/></svg>
+      </span>
+      <span>
+        <div class="brand-name">Tsehaye<em style="font-style:italic;color:var(--amber-deep)">Rx</em></div>
+        <div class="brand-tag">Clean Precision Healthcare</div>
+      </span>
+    </a>
+    <nav class="primary">
+      <a href="#" class="active">Home</a>
+      <a href="#">Directory</a>
+      <a href="#">Consultations</a>
+      <a href="#">Rx Refill</a>
+      <a href="#">Contact</a>
+    </nav>
+    <div class="head-right">
+      <div class="license-chip">Licensed &nbsp;<strong>FDRE-MOH-PH-9842-ET</strong></div>
+      <a href="#" class="cta-account">My Account</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>Medicine, measured&nbsp;to<br><em>your</em> biology.</h1>
+      <p class="lede">We compound each prescription by hand in an ISO 7 cleanroom — no fillers, no shortcuts, just formulations built around what your body actually needs.</p>
+      <div class="hero-ctas">
+        <a href="#" class="btn btn-primary">Book a consultation</a>
+        <a href="#" class="btn btn-ghost">Browse formulations</a>
+      </div>
+      <div class="cred-row">
+        <div class="cred-item">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="#33503F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="9" stroke="#33503F" stroke-width="1.6"/></svg>
+          ISO 7 cleanroom certified
+        </div>
+        <div class="cred-item">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="#33503F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="9" stroke="#33503F" stroke-width="1.6"/></svg>
+          Zero commercial fillers
+        </div>
+        <div class="cred-item">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="#33503F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="9" stroke="#33503F" stroke-width="1.6"/></svg>
+          Direct pharmacist access
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-art">
+      <div class="art-card">
+        <svg viewBox="0 0 400 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse">
+              <circle cx="1" cy="1" r="1" fill="rgba(233,238,242,0.10)"/>
+            </pattern>
+          </defs>
+          <rect width="400" height="500" fill="url(#dots)"/>
+          <!-- apothecary bottle -->
+          <rect x="150" y="120" width="100" height="220" rx="14" fill="#E9D6AE" opacity="0.92"/>
+          <rect x="172" y="80" width="56" height="46" rx="6" fill="#E9D6AE" opacity="0.92"/>
+          <rect x="164" y="66" width="72" height="18" rx="4" fill="#E9EEF2"/>
+          <rect x="162" y="200" width="76" height="90" rx="4" fill="#1E3226" opacity="0.55"/>
+          <line x1="172" y1="220" x2="228" y2="220" stroke="#E9EEF2" stroke-width="2" opacity="0.5"/>
+          <line x1="172" y1="234" x2="216" y2="234" stroke="#E9EEF2" stroke-width="2" opacity="0.4"/>
+          <line x1="172" y1="248" x2="224" y2="248" stroke="#E9EEF2" stroke-width="2" opacity="0.4"/>
+          <!-- molecule accents -->
+          <circle cx="300" cy="150" r="7" fill="#E9D6AE"/>
+          <circle cx="332" cy="180" r="5" fill="#E9EEF2" opacity="0.6"/>
+          <circle cx="310" cy="205" r="4" fill="#E9EEF2" opacity="0.4"/>
+          <line x1="300" y1="150" x2="332" y2="180" stroke="#E9D6AE" stroke-width="1.6" opacity="0.6"/>
+          <line x1="332" y1="180" x2="310" y2="205" stroke="#E9D6AE" stroke-width="1.6" opacity="0.4"/>
+          <circle cx="90" cy="360" r="6" fill="#E9D6AE" opacity="0.7"/>
+          <circle cx="65" cy="390" r="4" fill="#E9EEF2" opacity="0.5"/>
+          <line x1="90" y1="360" x2="65" y2="390" stroke="#E9D6AE" stroke-width="1.4" opacity="0.5"/>
+        </svg>
+        <div class="floater floater-1">
+          <div class="floater-icon">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M12 3l7 4v5c0 5-3 8-7 9-4-1-7-4-7-9V7l7-4z" stroke="#8E652A" stroke-width="1.7" stroke-linejoin="round"/></svg>
+          </div>
+          <div>
+            <div class="floater-title">Verified purity</div>
+            <div class="floater-sub">Clinical grade, USP 797</div>
+          </div>
+        </div>
+        <div class="floater floater-2">
+          <div class="floater-icon">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.4" stroke="#8E652A" stroke-width="1.7"/><path d="M5 20c1.2-4 4-6 7-6s5.8 2 7 6" stroke="#8E652A" stroke-width="1.7" stroke-linecap="round"/></svg>
+          </div>
+          <div>
+            <div class="floater-title">Pharmacist on duty</div>
+            <div class="floater-sub">Addis Ababa, today</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="cert-strip">
+  <div class="cert-left">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M12 3l7 4v5c0 5-3 8-7 9-4-1-7-4-7-9V7l7-4z" stroke="#33503F" stroke-width="1.7" stroke-linejoin="round"/></svg>
+    USP 797 &amp; 800 clinical compounding standard
+  </div>
+  <div class="cert-right">
+    <span><span class="status-dot"></span>Dispensary cleanroom active</span>
+    <span>License <span class="license-num">FDRE-MOH-PH-9842-ET</span></span>
+  </div>
+</div></div>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Four ways we practice pharmacy differently</h2>
+      <p>Every service below runs through the same cleanroom and the same board-certified pharmacists — there's no separate "standard" tier.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card feature">
+        <div class="service-icon">
+          <svg width="21" height="21" viewBox="0 0 24 24" fill="none"><path d="M9 3h6M10 3v5l-5 9a2 2 0 001.7 3h10.6a2 2 0 001.7-3l-5-9V3" stroke="#E9EEF2" stroke-width="1.7" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="service-title">Precision compounding</div>
+        <div class="service-desc">Custom-crafted medications built to your exact dosage, delivery method, and allergen-free base — not the nearest commercial equivalent.</div>
+        <a href="#" class="service-link">Explore compounded formulas →</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="21" height="21" viewBox="0 0 24 24" fill="none"><path d="M3 12h4l2-7 4 14 2-9 2 2h4" stroke="#33503F" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="service-title">Specialty care</div>
+        <div class="service-desc">Complex condition management, hormone optimization, and oncology adjunct support with a dedicated clinical advocate.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="21" height="21" viewBox="0 0 24 24" fill="none"><path d="M12 3l2.5 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5L12 3z" stroke="#33503F" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="service-title">Wellness curations</div>
+        <div class="service-desc">Clinical-grade nutraceuticals and liposomal vitamin infusions formulated for maximum bio-availability.</div>
+      </div>
+      <div class="service-card" style="grid-column:2;">
+        <span class="badge-24">24/7</span>
+        <div class="service-icon">
+          <svg width="21" height="21" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.4" stroke="#33503F" stroke-width="1.7"/><path d="M5 20c1.2-4 4-6 7-6s5.8 2 7 6" stroke="#33503F" stroke-width="1.7" stroke-linecap="round"/></svg>
+        </div>
+        <div class="service-title">Concierge pharmacy</div>
+        <div class="service-desc">Priority dispensing, discreet temperature-controlled delivery, and direct pharmacist calls for members.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+    <div class="formulations-head">
+      <div class="section-head" style="margin-bottom:0;">
+        <h2>Signature clinical formulations</h2>
+        <p>A small selection from the full compounding directory.</p>
+      </div>
+      <a href="#" class="view-all">View the full directory →</a>
+    </div>
+
+    <div class="ticket-grid">
+      <div class="ticket">
+        <div class="ticket-visual" style="background:linear-gradient(160deg,#E4E7DA,#D3D8C4);">
+          <div class="tag-row"><span class="tag">Dermatological</span><span class="tag rx">Rx required</span></div>
+          <svg viewBox="0 0 100 100"><rect x="38" y="20" width="24" height="60" rx="6" fill="#33503F" opacity="0.85"/><rect x="42" y="10" width="16" height="14" rx="3" fill="#33503F" opacity="0.85"/></svg>
+        </div>
+        <div class="ticket-body">
+          <div class="ticket-name">Lumera Complex</div>
+          <p class="ticket-desc">A dermal regeneration serum targeting cellular senescence.</p>
+          <div class="ticket-foot">
+            <div><span class="ticket-price-label">Price</span><span class="ticket-price">$125.00</span></div>
+            <a href="#" class="ticket-btn">Inspect</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="ticket">
+        <div class="ticket-visual" style="background:linear-gradient(160deg,#E9D6AE,#D9BE86);">
+          <div class="tag-row"><span class="tag">Nutraceutical</span></div>
+          <svg viewBox="0 0 100 100"><circle cx="35" cy="45" r="12" fill="#8E652A" opacity="0.8"/><circle cx="60" cy="55" r="12" fill="#8E652A" opacity="0.6"/><circle cx="50" cy="30" r="9" fill="#8E652A" opacity="0.5"/></svg>
+        </div>
+        <div class="ticket-body">
+          <div class="ticket-name">Vita-C Ethereal</div>
+          <p class="ticket-desc">A liposomal vitamin infusion designed for maximum bioavailability.</p>
+          <div class="ticket-foot">
+            <div><span class="ticket-price-label">Price</span><span class="ticket-price">$45.00</span></div>
+            <a href="#" class="ticket-btn">Inspect</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="ticket">
+        <div class="ticket-visual" style="background:linear-gradient(160deg,#DDE3D2,#C5CDB4);">
+          <div class="tag-row"><span class="tag">Neurological</span><span class="tag rx">Rx required</span></div>
+          <svg viewBox="0 0 100 100"><circle cx="30" cy="35" r="5" fill="#33503F"/><circle cx="55" cy="25" r="5" fill="#33503F"/><circle cx="70" cy="50" r="5" fill="#33503F"/><circle cx="45" cy="60" r="5" fill="#33503F"/><line x1="30" y1="35" x2="55" y2="25" stroke="#33503F" stroke-width="1.6"/><line x1="55" y1="25" x2="70" y2="50" stroke="#33503F" stroke-width="1.6"/><line x1="70" y1="50" x2="45" y2="60" stroke="#33503F" stroke-width="1.6"/><line x1="45" y1="60" x2="30" y2="35" stroke="#33503F" stroke-width="1.6"/></svg>
+        </div>
+        <div class="ticket-body">
+          <div class="ticket-name">SynapTech Neuro-Focus</div>
+          <p class="ticket-desc">A targeted cognitive enhancer for synaptic plasticity and balance.</p>
+          <div class="ticket-foot">
+            <div><span class="ticket-price-label">Price</span><span class="ticket-price">$95.00</span></div>
+            <a href="#" class="ticket-btn">Inspect</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+    <div class="upload-band">
+      <div>
+        <span class="upload-chip">Instant prescription transfer</span>
+        <h3>Have an existing prescription, or a formula only you and your doctor know?</h3>
+        <p>Upload a photo or document. Our compounding lab verifies it with your physician and prepares your formulation — usually within a day.</p>
+      </div>
+      <div class="upload-actions">
+        <a href="#" class="btn btn-amber">Upload prescription</a>
+        <a href="#" class="btn btn-outline-light">Call the on-duty pharmacist</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head" style="margin:0 auto 52px; text-align:center; max-width:560px;">
+      <h2>What patients and clinicians say</h2>
+      <p>Trusted by medical practitioners and patients across Addis Ababa and beyond.</p>
+    </div>
+    <div class="quote-row">
+      <div class="quote">
+        <div class="stars">★★★★★</div>
+        <p>"The custom transdermal hormone therapy resolved symptoms that standard tablets never touched. The clinical attention is unlike anything I've had before."</p>
+        <div class="quote-who">Bethzatha K. — Patient</div>
+      </div>
+      <div class="quote">
+        <div class="stars">★★★★★</div>
+        <p>"Having a pharmacy with an ISO 7 cleanroom that can formulate allergen-free, preservative-free topical retinoids has changed how I practice."</p>
+        <div class="quote-who">Dr. Henok G. — Dermatologist</div>
+      </div>
+      <div class="quote">
+        <div class="stars">★★★★★</div>
+        <p>"Discreet delivery to my door within three hours. The sterile packaging and the phone consultation made me feel genuinely looked after."</p>
+        <div class="quote-who">Michael T. — Concierge Member</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <span class="brand-mark">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 3v18M3 12h18" stroke="#E9EEF2" stroke-width="2.4" stroke-linecap="round"/></svg>
+          </span>
+          <div class="brand-name">Tsehaye Unique Pharmacy</div>
+        </div>
+        <p class="desc">Vitality through science — boutique compounding and clinical precision pharmaceuticals, tailored to individual human biology.</p>
+        <div class="footer-meta">📍 Bole Road, next to Medhanealem Tower, Addis Ababa</div>
+        <div class="footer-meta">🕐 Mon–Fri 8:00–21:00 · Sat 9:00–18:00</div>
+      </div>
+      <div class="footer-col">
+        <h4>Patient services</h4>
+        <a href="#">Drug directory</a>
+        <a href="#">Book consultation</a>
+        <a href="#">Prescription refill</a>
+        <a href="#">Operating hours</a>
+      </div>
+      <div class="footer-col">
+        <h4>Connect &amp; urgent</h4>
+        <div class="contact-line"><strong>+251 11 123 4567</strong><span>24/7 clinical support line</span></div>
+        <div class="contact-line"><strong>consult@tsehayepharmacy.com</strong><span>Pharmacist direct inquiries</span></div>
+        <a href="#" class="emergency">Emergency on-call · +251 11 999 8888</a>
+      </div>
+      <div class="portal-box">
+        <h4>🔒 Patient encrypted portal</h4>
+        <p>Access your formulations, lab records, scheduled consultations, and confidential pharmacist messages.</p>
+        <a href="#" class="btn btn-amber" style="padding:11px 18px; font-size:0.86rem;">Launch patient portal</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Tsehaye Unique Pharmacy. Licensed clinical pharmaceutical practice.</span>
+      <div>
+        <a href="#">Privacy protocol</a>
+        <a href="#">Terms of therapy</a>
+        <a href="#">Quality assurance</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

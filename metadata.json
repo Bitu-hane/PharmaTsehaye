@@ -1,0 +1,6 @@
+{
+  "name": "Tsehaye Unique Pharmacy",
+  "description": "Boutique healthcare and precision pharmaceutical services featuring tailored formulations, clinical consultations, and interactive wellness curations.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
