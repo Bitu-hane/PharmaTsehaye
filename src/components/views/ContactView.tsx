@@ -182,13 +182,13 @@ export const ContactView: React.FC = () => {
               </span>
               <h4 className="font-display text-2xl font-bold">Bole Road Pharmacy</h4>
               <p className="text-xs text-white/80 leading-relaxed">
-                Next to Medhanealem Tower, Addis Ababa, Ethiopia. Look for our bright blue displays and welcoming team!
+                In front of Hosea Real Estate, Addis Ababa, Ethiopia. Look for our bright blue displays and welcoming team!
               </p>
             </div>
 
             <div className="pt-4 border-t border-white/15 flex items-center justify-between">
               <a
-                href="https://maps.google.com"
+                href="https://maps.app.goo.gl/Uz1rbTVqTvsoFxgk7"
                 target="_blank"
                 rel="noreferrer"
                 className="px-5 py-2.5 rounded-full bg-[#c9a227] hover:bg-white text-[#1a2f3a] text-xs font-bold flex items-center gap-2 transition-colors cursor-pointer"

@@ -13,7 +13,7 @@ import { Footer } from './components/Footer';
 import { UXAuditModal } from './components/UXAuditModal';
 import { MedicationModal } from './components/modals/MedicationModal';
 import { CartDrawer } from './components/modals/CartDrawer';
-import { PatientPortalModal } from './components/modals/PatientPortalModal';
+//import { PatientPortalModal } from './components/modals/PatientPortalModal';
 
 // Views
 import { HomeView } from './components/views/HomeView';
@@ -37,7 +37,6 @@ export default function App() {
 
   // Modal States
   const [isCartOpen, setIsCartOpen] = useState(false);
-  const [isPatientPortalOpen, setIsPatientPortalOpen] = useState(false);
   const [isUXAuditOpen, setIsUXAuditOpen] = useState(false);
 
   // Scroll to top when activeTab changes
@@ -99,7 +98,6 @@ export default function App() {
         setActiveTab={setActiveTab}
         cartCount={totalCartCount}
         openCart={() => setIsCartOpen(true)}
-        openPatientPortal={() => setIsPatientPortalOpen(true)}
         openUXAudit={() => setIsUXAuditOpen(true)}
       />
 
@@ -136,7 +134,6 @@ export default function App() {
       {/* Footer */}
       <Footer
         setActiveTab={setActiveTab}
-        openPatientPortal={() => setIsPatientPortalOpen(true)}
       />
 
       {/* Global Modals & Drawers */}
@@ -154,15 +151,6 @@ export default function App() {
         onUpdateQuantity={handleUpdateQuantity}
         onRemoveItem={handleRemoveItem}
         onClearCart={handleClearCart}
-      />
-
-      <PatientPortalModal
-        isOpen={isPatientPortalOpen}
-        onClose={() => setIsPatientPortalOpen(false)}
-        onNavigateToRefill={() => {
-          setIsPatientPortalOpen(false);
-          setActiveTab('refill');
-        }}
       />
 
       <UXAuditModal

@@ -17,7 +17,6 @@ interface HeaderProps {
   setActiveTab: (tab: NavigationTab) => void;
   cartCount: number;
   openCart: () => void;
-  openPatientPortal: () => void;
   openUXAudit: () => void;
 }
 
@@ -26,7 +25,6 @@ export const Header: React.FC<HeaderProps> = ({
   setActiveTab,
   cartCount,
   openCart,
-  openPatientPortal,
   openUXAudit,
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -137,16 +135,6 @@ export const Header: React.FC<HeaderProps> = ({
               )}
             </button>
 
-            {/* Patient Portal / Account Button */}
-            <button
-              onClick={openPatientPortal}
-              className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#0d7377] to-[#14919b] hover:brightness-110 text-white rounded-full text-xs sm:text-sm font-semibold shadow-md shadow-[#0d7377]/20 transition-all cursor-pointer active:scale-95"
-              aria-label="Get Started / My Account"
-            >
-              <User className="w-3.5 h-3.5" />
-              <span>Portal</span>
-            </button>
-
             {/* Mobile Navigation Toggle */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -182,7 +170,7 @@ export const Header: React.FC<HeaderProps> = ({
               );
             })}
             
-            <div className="pt-3 border-t border-[#0F3C6C]/10 flex flex-col gap-2">
+            {/* <div className="pt-3 border-t border-[#0F3C6C]/10 flex flex-col gap-2">
               <div className="flex items-center gap-2 text-xs text-[#0F3C6C] px-2 py-1 bg-[#EAF5F3] rounded-lg">
                 <MessageSquare className="w-3.5 h-3.5 text-[#008674]" />
                 <span>Text support online: <strong className="text-[#008674]">+251 91 123 4567</strong></span>
@@ -190,26 +178,16 @@ export const Header: React.FC<HeaderProps> = ({
               <div className="flex gap-2">
                 <button
                   onClick={() => {
-                    openPatientPortal();
-                    setMobileMenuOpen(false);
-                  }}
-                  className="flex-1 py-2.5 rounded-xl bg-[#EF4931] text-white font-semibold text-xs flex items-center justify-center gap-1.5"
-                >
-                  <User className="w-3.5 h-3.5" />
-                  Patient Portal
-                </button>
-                <button
-                  onClick={() => {
                     openUXAudit();
                     setMobileMenuOpen(false);
                   }}
-                  className="flex-1 py-2.5 rounded-xl bg-[#EAF5F3] text-[#0F3C6C] font-semibold text-xs flex items-center justify-center gap-1.5 border border-[#0F3C6C]/15"
+                  className="w-full py-2.5 rounded-xl bg-[#EAF5F3] text-[#0F3C6C] font-semibold text-xs flex items-center justify-center gap-1.5 border border-[#0F3C6C]/15"
                 >
                   <Award className="w-3.5 h-3.5 text-[#EF4931]" />
                   UX Audit
                 </button>
               </div>
-            </div>
+            </div> */}
           </div>
         )}
       </div>

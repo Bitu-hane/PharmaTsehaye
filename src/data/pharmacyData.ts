@@ -9,7 +9,7 @@ export const PHARMACY_INFO = {
   textSupportPhone: '+251 91 123 4567 (Text / WhatsApp)',
   emergencyPhone: '+251 11 999 8888',
   email: 'care@tsehayepharmacy.com',
-  address: 'Bole Road, Next to Medhanealem Tower, Addis Ababa, Ethiopia',
+  address: 'In front of Hosea Real Estate, Addis Ababa, Ethiopia',
   deliveryCoverageAreas: [
     'Bole', 'Kazanchis', 'Old Airport', 'CMC', 'Sarbet', 
     'Piazza', 'Megenagna', 'Bisrate Gabriel', 'Gerji', 
