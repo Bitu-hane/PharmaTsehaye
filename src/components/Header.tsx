@@ -17,7 +17,6 @@ interface HeaderProps {
   setActiveTab: (tab: NavigationTab) => void;
   cartCount: number;
   openCart: () => void;
-  openUXAudit: () => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({
@@ -25,7 +24,6 @@ export const Header: React.FC<HeaderProps> = ({
   setActiveTab,
   cartCount,
   openCart,
-  openUXAudit,
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -110,17 +108,6 @@ export const Header: React.FC<HeaderProps> = ({
               <span>MoH Lic: <strong className="text-[#1a2f3a]">PH-9842-ET</strong></span>
             </div>
 
-            {/* UX Audit Button */}
-            <button
-              onClick={openUXAudit}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#ffffff] hover:bg-[#0d7377]/10 text-[#1a2f3a] border border-[#0d7377]/20 text-xs font-semibold shadow-xs transition-all cursor-pointer"
-              title="View Senior UI/UX Audit & Rating"
-            >
-              <Award className="w-3.5 h-3.5 text-[#c9a227]" />
-              <span className="hidden md:inline text-[11px]">UX Score:</span>
-              <span className="bg-[#1a2f3a] text-[#e8d48b] px-1.5 py-0.5 rounded text-[10px] font-bold font-mono-spec">9.8 / 10</span>
-            </button>
-
             {/* Cart Drawer Button */}
             <button
               onClick={openCart}
@@ -169,25 +156,6 @@ export const Header: React.FC<HeaderProps> = ({
                 </button>
               );
             })}
-            
-            {/* <div className="pt-3 border-t border-[#0F3C6C]/10 flex flex-col gap-2">
-              <div className="flex items-center gap-2 text-xs text-[#0F3C6C] px-2 py-1 bg-[#EAF5F3] rounded-lg">
-                <MessageSquare className="w-3.5 h-3.5 text-[#008674]" />
-                <span>Text support online: <strong className="text-[#008674]">+251 91 123 4567</strong></span>
-              </div>
-              <div className="flex gap-2">
-                <button
-                  onClick={() => {
-                    openUXAudit();
-                    setMobileMenuOpen(false);
-                  }}
-                  className="w-full py-2.5 rounded-xl bg-[#EAF5F3] text-[#0F3C6C] font-semibold text-xs flex items-center justify-center gap-1.5 border border-[#0F3C6C]/15"
-                >
-                  <Award className="w-3.5 h-3.5 text-[#EF4931]" />
-                  UX Audit
-                </button>
-              </div>
-            </div> */}
           </div>
         )}
       </div>

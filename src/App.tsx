@@ -10,10 +10,8 @@ import { MEDICATIONS_DATA } from './data/pharmacyData';
 // Components
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
-import { UXAuditModal } from './components/UXAuditModal';
 import { MedicationModal } from './components/modals/MedicationModal';
 import { CartDrawer } from './components/modals/CartDrawer';
-//import { PatientPortalModal } from './components/modals/PatientPortalModal';
 
 // Views
 import { HomeView } from './components/views/HomeView';
@@ -37,7 +35,6 @@ export default function App() {
 
   // Modal States
   const [isCartOpen, setIsCartOpen] = useState(false);
-  const [isUXAuditOpen, setIsUXAuditOpen] = useState(false);
 
   // Scroll to top when activeTab changes
   useEffect(() => {
@@ -98,7 +95,6 @@ export default function App() {
         setActiveTab={setActiveTab}
         cartCount={totalCartCount}
         openCart={() => setIsCartOpen(true)}
-        openUXAudit={() => setIsUXAuditOpen(true)}
       />
 
       {/* Main App Canvas */}
@@ -151,11 +147,6 @@ export default function App() {
         onUpdateQuantity={handleUpdateQuantity}
         onRemoveItem={handleRemoveItem}
         onClearCart={handleClearCart}
-      />
-
-      <UXAuditModal
-        isOpen={isUXAuditOpen}
-        onClose={() => setIsUXAuditOpen(false)}
       />
 
     </div>
