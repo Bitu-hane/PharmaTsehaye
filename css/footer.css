@@ -1,0 +1,57 @@
+/* ==========================================================================
+   Tsheaye Unique Pharmacy - Footer & Legal Disclaimer
+   ========================================================================== */
+
+footer {
+  background: var(--ink);
+  color: #bcd6c8;
+  margin-top: clamp(64px, 9vw, 120px);
+  padding: 72px 0 120px;
+  border-radius: var(--r) var(--r) 0 0;
+}
+
+.fg {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 40px;
+}
+
+footer h4 {
+  font: 700 17px var(--display);
+  color: #fff;
+  margin-bottom: 14px;
+}
+
+footer ul {
+  padding: 0;
+  list-style: none;
+}
+
+footer li {
+  margin-bottom: 8px;
+  font-size: 15px;
+}
+
+footer a {
+  transition: color 0.2s;
+}
+
+footer a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.fg p {
+  font-size: 15px;
+  max-width: 34ch;
+}
+
+.disc {
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 13px;
+  display: grid;
+  gap: 10px;
+  line-height: 1.6;
+}

@@ -1,0 +1,193 @@
+/* ==========================================================================
+   Tsheaye Unique Pharmacy - Navigation, Header & Mobile Dock
+   ========================================================================== */
+
+/* Main Header Bar */
+#hdr {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  background: rgba(248, 250, 248, 0.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(11, 47, 35, 0.06);
+  margin: 0 -20px;
+  padding: 0 20px;
+  transition: background-color 0.25s, box-shadow 0.25s, border-color 0.25s;
+}
+
+body[data-page="index.html"] #hdr {
+  margin: 0 calc(-1 * clamp(12px, 1.4vw, 20px));
+  padding: 0 clamp(12px, 1.4vw, 20px);
+}
+
+#hdr.scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 10px 30px -10px rgba(11, 47, 35, 0.08), 0 2px 6px rgba(11, 47, 35, 0.02);
+  border-bottom-color: rgba(11, 47, 35, 0.12);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 0;
+  transition: padding 0.25s;
+}
+
+#hdr.scrolled .nav {
+  padding: 10px 0;
+}
+
+/* Brand Identity */
+.brand {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 26px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: opacity 0.2s;
+}
+
+.brand:hover {
+  opacity: 0.92;
+}
+
+.brand i {
+  width: 30px;
+  height: 30px;
+  border-radius: 9px;
+  background: var(--leaf);
+  position: relative;
+  flex: none;
+}
+
+.brand i::before,
+.brand i::after {
+  content: "";
+  position: absolute;
+  background: #fff;
+  border-radius: 2px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.brand i::before {
+  width: 16px;
+  height: 4px;
+}
+
+.brand i::after {
+  width: 4px;
+  height: 16px;
+}
+
+/* Desktop Navigation Links */
+.links {
+  display: flex;
+  gap: 6px;
+}
+
+.links a {
+  padding: 8px 16px;
+  border-radius: 99px;
+  font-weight: 500;
+  font-size: 15px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.links a:hover,
+.links a[aria-current="page"] {
+  background: var(--mint);
+  color: var(--ink);
+}
+
+/* Header Right Actions */
+.nav-r {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Live Open/Closed Status Badge */
+.open {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  background: #fff;
+  padding: 8px 14px;
+  border-radius: 99px;
+  box-shadow: 0 2px 10px rgba(13, 51, 38, 0.05);
+}
+
+.open b {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--leaf);
+  box-shadow: 0 0 0 0 rgba(27, 138, 75, 0.6);
+  animation: ping 2s infinite;
+}
+
+.open.closed b {
+  background: var(--danger);
+  animation: none;
+  box-shadow: none;
+}
+
+@keyframes ping {
+  70% {
+    box-shadow: 0 0 0 9px rgba(27, 138, 75, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(27, 138, 75, 0);
+  }
+}
+
+/* Mobile Fixed Bottom Dock Navigation */
+.dock {
+  position: fixed;
+  left: 50%;
+  bottom: 14px;
+  transform: translateX(-50%);
+  display: none;
+  gap: 4px;
+  padding: 8px;
+  border-radius: 99px;
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.85);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 12px 40px -12px rgba(13, 51, 38, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.dock a {
+  padding: 10px 14px;
+  border-radius: 99px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+  white-space: nowrap;
+  transition: background 0.2s, color 0.2s;
+}
+
+.dock a[aria-current="page"] {
+  background: var(--ink);
+  color: #fff;
+}
+
+@media (max-width: 1000px) {
+  .links, .open {
+    display: none;
+  }
+  .dock {
+    display: flex;
+  }
+}

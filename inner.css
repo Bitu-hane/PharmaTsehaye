@@ -1,0 +1,5 @@
+/* ==========================================================================
+   Tsheaye Unique Pharmacy - Legacy Inner Stylesheet
+   Redirects to the consolidated master stylesheet (style.css).
+   ========================================================================== */
+@import url("style.css");

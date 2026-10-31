@@ -1,0 +1,441 @@
+/* ==========================================================================
+   Tsheaye Unique Pharmacy - Inner Pages Stylesheet
+   (Medicines, Services, Health Tips, About Us, Contact)
+   ========================================================================== */
+
+/* Universal Inner Page Hero (.ph) */
+.ph {
+  border-radius: var(--r);
+  background: linear-gradient(120deg, #cfe9d9, #eef7f1 60%, #fff);
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  overflow: hidden;
+  min-height: 380px;
+  align-items: center;
+}
+
+.ph > div {
+  padding: clamp(28px, 5vw, 72px);
+}
+
+.ph h1 {
+  font-weight: 800;
+  font-size: clamp(42px, 6.4vw, 92px);
+  line-height: 0.92;
+  margin-bottom: 18px;
+  animation: rise 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.ph p {
+  color: var(--mute);
+  font-size: 18px;
+  max-width: 42ch;
+  animation: rise 0.9s 0.12s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.ph img {
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  object-fit: cover;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 35%);
+  mask-image: linear-gradient(to right, transparent, #000 35%);
+}
+
+/* --------------------------------------------------------------------------
+   Medicines Catalog Page
+   -------------------------------------------------------------------------- */
+.tools {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.sbox {
+  flex: 1 1 300px;
+  background: #fff;
+  border-radius: 99px;
+  display: flex;
+  padding: 6px 6px 6px 22px;
+  align-items: center;
+  box-shadow: 0 2px 12px rgba(13, 51, 38, 0.05);
+}
+
+.sbox:focus-within {
+  box-shadow: 0 0 0 3px var(--leaf);
+}
+
+.sbox input {
+  border: 0;
+  flex: 1;
+  min-width: 0;
+  font: inherit;
+  background: none;
+  outline: 0;
+  color: var(--ink);
+}
+
+.chips {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.chip {
+  border: 1.5px solid rgba(13, 51, 38, 0.2);
+  background: none;
+  border-radius: 99px;
+  padding: 9px 18px;
+  font: 600 14px var(--body);
+  color: var(--ink);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.chip:hover {
+  border-color: var(--ink);
+}
+
+.chip[aria-pressed="true"] {
+  background: var(--ink);
+  color: #fff;
+  border-color: var(--ink);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.prod {
+  position: relative;
+  background: #ffffff;
+  border-radius: 120px 120px 26px 26px;
+  padding: 28px 20px 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.3s;
+  animation: rise 0.5s both;
+  box-shadow: 0 4px 18px rgba(13, 51, 38, 0.05);
+  border: 1.5px solid rgba(13, 51, 38, 0.08);
+  overflow: hidden;
+}
+
+.prod::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 110px;
+  background: radial-gradient(ellipse at 50% 20%, rgba(27, 138, 75, 0.1) 0%, transparent 72%);
+  pointer-events: none;
+  border-radius: 120px 120px 0 0;
+}
+
+.prod:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px -15px rgba(13, 51, 38, 0.18);
+  border-color: var(--leaf);
+}
+
+.pill-i {
+  width: 68px;
+  height: 28px;
+  border-radius: 99px;
+  background: linear-gradient(90deg, var(--c, var(--leaf)) 50%, #fff 50%);
+  border: 2px solid var(--c, var(--leaf));
+  transform: rotate(-30deg);
+  margin: 10px auto 12px;
+  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s;
+  box-shadow: 0 4px 12px rgba(13, 51, 38, 0.1);
+  position: relative;
+  z-index: 1;
+}
+
+.prod:hover .pill-i {
+  transform: rotate(150deg) scale(1.1);
+  box-shadow: 0 6px 16px rgba(13, 51, 38, 0.16);
+}
+
+.prod h3 {
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--ink);
+  margin: 4px 0 2px;
+}
+
+.prod small {
+  color: var(--mute);
+  font-size: 13.5px;
+  font-weight: 500;
+}
+
+.bd {
+  align-self: center;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 99px;
+  background: var(--mint);
+  color: var(--ink);
+  border: 1px solid rgba(27, 138, 75, 0.2);
+}
+
+.bd.rx {
+  background: rgba(230, 165, 58, 0.18);
+  color: #925807;
+  border-color: rgba(230, 165, 58, 0.35);
+}
+
+.prod a {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+  padding: 10px 18px;
+  border-radius: 99px;
+  font-weight: 600;
+  font-size: 13.5px;
+  background: var(--paper);
+  color: var(--ink);
+  border: 1.5px solid rgba(13, 51, 38, 0.12);
+  transition: all 0.25s ease;
+  text-align: center;
+}
+
+.prod a:hover {
+  background: var(--ink);
+  color: #fff;
+  border-color: var(--ink);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px -4px rgba(13, 51, 38, 0.3);
+}
+
+.empty {
+  padding: 48px;
+  text-align: center;
+  background: #fff;
+  border-radius: 26px;
+  display: none;
+}
+
+/* --------------------------------------------------------------------------
+   Services Page
+   -------------------------------------------------------------------------- */
+.sv {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(24px, 5vw, 72px);
+  align-items: center;
+  margin-bottom: clamp(48px, 7vw, 96px);
+}
+
+.sv:nth-child(even) .im {
+  order: 2;
+}
+
+.sv .im {
+  border-radius: var(--r);
+  overflow: hidden;
+}
+
+.sv img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  transition: transform 0.8s;
+}
+
+.sv:hover img {
+  transform: scale(1.05);
+}
+
+.sv h2 {
+  font-size: clamp(32px, 4vw, 52px);
+  margin-bottom: 14px;
+  font-weight: 800;
+}
+
+.sv ul {
+  margin: 18px 0 22px;
+  padding: 0;
+  list-style: none;
+}
+
+.sv li {
+  padding: 10px 0;
+  border-top: 1px solid rgba(13, 51, 38, 0.15);
+  display: flex;
+  gap: 12px;
+}
+
+.sv li::before {
+  content: "✚";
+  color: var(--leaf);
+}
+
+/* --------------------------------------------------------------------------
+   Health Tips & FAQ Accordion Page
+   -------------------------------------------------------------------------- */
+details {
+  background: #fff;
+  border-radius: 28px;
+  margin-bottom: 14px;
+  padding: 6px 30px;
+  transition: box-shadow 0.3s;
+}
+
+details[open] {
+  box-shadow: 0 24px 40px -28px rgba(13, 51, 38, 0.5);
+}
+
+summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 24px 0;
+  font: 700 clamp(22px, 2.6vw, 32px) var(--display);
+  letter-spacing: -0.025em;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary::after {
+  content: "+";
+  flex: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--mint);
+  display: grid;
+  place-items: center;
+  font: 500 24px var(--body);
+  transition: transform 0.3s, background 0.3s;
+}
+
+details[open] summary::after {
+  transform: rotate(45deg);
+  background: var(--oil);
+}
+
+.ans {
+  padding: 0 0 28px;
+  max-width: 68ch;
+  color: var(--mute);
+  font-size: 17px;
+  display: grid;
+  gap: 12px;
+}
+
+.ans strong {
+  color: var(--ink);
+}
+
+.warn {
+  background: var(--mint);
+  border-radius: 18px;
+  padding: 14px 18px;
+  color: var(--ink);
+  font-size: 15px;
+}
+
+/* --------------------------------------------------------------------------
+   About Us Page
+   -------------------------------------------------------------------------- */
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(24px, 5vw, 72px);
+  align-items: center;
+}
+
+.split img {
+  border-radius: var(--r);
+  width: 100%;
+}
+
+.vals {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.val {
+  background: #fff;
+  border-radius: 28px;
+  padding: 30px;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.val:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px -15px rgba(13, 51, 38, 0.15);
+}
+
+.val h3 {
+  font-size: 28px;
+}
+
+.val p {
+  color: var(--mute);
+}
+
+/* --------------------------------------------------------------------------
+   Contact Page
+   -------------------------------------------------------------------------- */
+.cg {
+  display: grid;
+  grid-template-columns: 5fr 6fr;
+  gap: clamp(24px, 4vw, 56px);
+  align-items: start;
+}
+
+.card {
+  background: #fff;
+  border-radius: var(--r);
+  padding: clamp(24px, 4vw, 44px);
+  box-shadow: 0 4px 20px rgba(13, 51, 38, 0.05);
+}
+
+.hrs {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+}
+
+.hrs td {
+  padding: 12px 0;
+  border-top: 1px solid rgba(13, 51, 38, 0.14);
+}
+
+.hrs td:last-child {
+  text-align: right;
+  font-weight: 600;
+}
+
+.hrs tr.today td {
+  color: var(--leaf);
+  font-weight: 700;
+}

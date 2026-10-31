@@ -1,0 +1,176 @@
+/* ==========================================================================
+   Tsheaye Unique Pharmacy - Responsive Media Queries & Accessibility
+   ========================================================================== */
+
+/* Tablet & Medium Screens (< 1080px) */
+@media (max-width: 1080px) {
+  .links {
+    display: none;
+  }
+  .care {
+    width: min(340px, 42%);
+  }
+  .side {
+    width: min(290px, 38%);
+  }
+  .stamp {
+    left: 46%;
+  }
+  .toast {
+    left: 46%;
+  }
+}
+
+/* Tablet & Mobile Breakpoint (< 1000px) */
+@media (max-width: 1000px) {
+  .links, .open {
+    display: none;
+  }
+  .dock {
+    display: flex;
+  }
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile Screens (< 860px) */
+@media (max-width: 860px) {
+  .open {
+    display: none;
+  }
+  .frame {
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 84px 14px 14px;
+  }
+  .frame > .photo {
+    position: relative;
+    order: 2;
+    right: auto;
+    bottom: auto;
+    width: calc(100% + 28px);
+    margin: -10px -14px;
+    height: 260px;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+  .top {
+    left: 14px;
+    right: 14px;
+  }
+  .top .pill:first-child {
+    display: none;
+  }
+  .search {
+    flex: 1;
+  }
+  h1.hero-h {
+    position: static;
+    max-width: none;
+    padding: 10px 6px 0;
+    font-size: clamp(46px, 14vw, 80px);
+  }
+  .dock {
+    position: fixed;
+    left: 50%;
+    bottom: 14px;
+    top: auto;
+    transform: translateX(-50%);
+    flex-direction: row;
+    z-index: 50;
+  }
+  .frame .dock {
+    display: none;
+  }
+  .dock span {
+    display: none;
+  }
+  .care, .side {
+    position: static;
+    width: auto;
+    order: 3;
+  }
+  .stamp {
+    position: absolute;
+    left: auto;
+    right: 18px;
+    top: 300px;
+    bottom: auto;
+    width: 104px;
+    height: 104px;
+  }
+  .stamp i {
+    inset: 30px;
+    font-size: 22px;
+  }
+  .toast {
+    left: 14px;
+    right: 14px;
+    bottom: auto;
+    top: 420px;
+    text-align: center;
+    border-radius: 20px;
+  }
+  .stag, .cats, .guides {
+    grid-template-columns: 1fr;
+  }
+  .fc:nth-child(2), .fc:nth-child(3) {
+    margin-top: 0;
+  }
+  .svc, .about, .fg {
+    grid-template-columns: 1fr;
+  }
+  .svc .L {
+    position: static;
+  }
+  .about img {
+    min-height: 260px;
+  }
+}
+
+/* Small Handhelds (< 760px) */
+@media (max-width: 760px) {
+  .ph, .sv, .split, .cg, .fg, .vals {
+    grid-template-columns: 1fr;
+  }
+  .ph img {
+    min-height: 220px;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+  .sv:nth-child(even) .im {
+    order: 0;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .loc {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .band {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* Accessibility: User Prefers Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .ln span {
+    transform: none;
+  }
+  .pop, .rv {
+    opacity: 1;
+    transform: none;
+  }
+  .mq div {
+    animation: none;
+  }
+}

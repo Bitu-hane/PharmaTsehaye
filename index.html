@@ -1,21 +1,849 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tsehaye Unique Pharmacy | Boutique Clinical Healthcare</title>
-    <meta name="description" content="Experience boutique healthcare where clinical precision meets bespoke wellness. Curated pharmaceutical solutions tailored to your unique biological signature." />
-    <meta property="og:title" content="Tsehaye Unique Pharmacy | Boutique Clinical Healthcare" />
-    <meta property="og:description" content="Experience boutique healthcare where clinical precision meets bespoke wellness. Curated pharmaceutical solutions tailored to your unique biological signature." />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary_large_image" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tsheaye Unique Pharmacy | Home</title>
+    <meta
+      name="description"
+      content="Tsheaye Unique Pharmacy - Quality medicines, trusted healthcare advice, and community wellness services in Addis Ababa, Ethiopia."
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="bg-slate-50 text-slate-900 antialiased selection:bg-sky-600 selection:text-white">
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+  <body data-page="index.html">
+    <div class="wrap wrap-wide">
+      <div id="hdr" data-include="header.html"></div>
+
+      <main>
+        <div class="frame" id="home">
+          <!-- Hero Background Slideshow Engine (Curated Clinical Visuals) -->
+          <div class="hero-slideshow" aria-hidden="true">
+            <div class="hero-slide active">
+              <picture>
+                <source
+                  srcset="images/hero-pharmacist.webp"
+                  type="image/webp"
+                />
+                <img
+                  src="images/hero-pharmacist.jpg"
+                  alt="Licensed Ethiopian pharmacist at Tsehay Unique Pharmacy providing personalized medication advice and genuine healthcare products"
+                  width="1376"
+                  height="768"
+                  fetchpriority="high"
+                />
+              </picture>
+            </div>
+            <div class="hero-slide">
+              <img
+                src="images/pharmacist-consultation.jpg"
+                alt="Pharmacist explaining prescription dosage and safety to patient over the counter"
+                width="1280"
+                height="853"
+                loading="lazy"
+                fetchpriority="low"
+              />
+            </div>
+            <div class="hero-slide">
+              <img
+                src="images/clinic-desk.jpg"
+                alt="Healthcare consultation desk with stethoscope, clipboard and clinical notes"
+                width="1152"
+                height="896"
+                loading="lazy"
+                fetchpriority="low"
+              />
+            </div>
+          </div>
+
+          <!-- Strategic Multi-Stop Contrast Overlay (Pristine Luminous Aesthetic) -->
+          <div class="hero-overlay" aria-hidden="true"></div>
+
+          <!-- Master Content Grid -->
+          <div class="hero-container">
+            <!-- Left: Value Proposition, CTAs & Quick Search -->
+            <div class="hero-content">
+              <div class="hero-kicker-badge">
+                <span class="live-dot" aria-hidden="true"></span>
+                <span>Licensed Community Pharmacy · Addis Ababa</span>
+              </div>
+
+              <h1 class="hero-title">
+                Care, <br />dispensed <span class="highlight">precisely.</span>
+              </h1>
+
+              <p class="hero-lead">
+                Authentic certified medicines, personalized pharmacist
+                consultations, and walk-in health checks — delivered with
+                kindness and clinical rigor.
+              </p>
+
+              <div class="hero-actions">
+                <a href="medicines.html" class="hero-btn primary">
+                  Explore Medicines <span>→</span>
+                </a>
+                <a href="services.html" class="hero-btn secondary">
+                  Our Services
+                </a>
+              </div>
+
+              <form
+                class="hero-search-hub"
+                action="medicines.html"
+                role="search"
+              >
+                <div class="search-input-wrap">
+                  <svg
+                    class="search-ico"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="M21 21l-4.35-4.35"></path>
+                  </svg>
+                  <input
+                    type="search"
+                    name="q"
+                    placeholder="Search catalog (e.g. Paracetamol, Vitamins…)"
+                    aria-label="Search catalog"
+                  />
+                </div>
+                <button type="submit" class="search-btn">Search</button>
+              </form>
+            </div>
+
+            <!-- Right: Executive Healthcare Assurance Card -->
+            <aside class="hero-trust-card glass">
+              <div class="trust-card-header">
+                <div class="trust-badge-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <strong>100% Genuine Medicines</strong>
+                  <small>Sourced directly from verified manufacturers</small>
+                </div>
+              </div>
+
+              <div class="trust-metrics-grid">
+                <div class="metric-item">
+                  <span class="metric-num">Mon–Sat</span>
+                  <span class="metric-label">8:00 AM – 8:00 PM</span>
+                </div>
+                <div class="metric-item">
+                  <span class="metric-num">Walk-In</span>
+                  <span class="metric-label">No Appointment</span>
+                </div>
+                <div class="metric-item">
+                  <span class="metric-num">Daily</span>
+                  <span class="metric-label">Pharmacist On Duty</span>
+                </div>
+              </div>
+
+              <div class="trust-card-footer">
+                <a href="tel:+251911086624" class="stat-call-btn">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24 11.72 11.72 0 003.68.59 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.59 3.68a1 1 0 01-.24 1.02l-2.23 2.09z"
+                    />
+                  </svg>
+                  <span>+251 91 108 6624</span>
+                </a>
+                <a href="contact.html" class="stat-visit-link"
+                  >Find Us on Bole Rd →</a
+                >
+              </div>
+            </aside>
+          </div>
+
+          <!-- Slideshow Navigation Controller & Arrows (Senior UX Controls) -->
+          <div
+            class="hero-slideshow-nav"
+            role="tablist"
+            aria-label="Hero Slideshow Controls"
+          >
+            <div class="hero-slide-tabs">
+              <button
+                type="button"
+                class="slide-dot active"
+                role="tab"
+                aria-selected="true"
+                aria-label="Slide 1: Licensed Pharmacist"
+                data-slide="0"
+              >
+                <span class="dot-indicator" aria-hidden="true"></span>
+                <span class="dot-label">Pharmacist Care</span>
+                <span class="dot-timer-bar" aria-hidden="true"
+                  ><span class="dot-timer-fill"></span
+                ></span>
+              </button>
+              <button
+                type="button"
+                class="slide-dot"
+                role="tab"
+                aria-selected="false"
+                aria-label="Slide 2: Patient Consultation"
+                data-slide="1"
+              >
+                <span class="dot-indicator" aria-hidden="true"></span>
+                <span class="dot-label">Patient Care</span>
+                <span class="dot-timer-bar" aria-hidden="true"
+                  ><span class="dot-timer-fill"></span
+                ></span>
+              </button>
+              <button
+                type="button"
+                class="slide-dot"
+                role="tab"
+                aria-selected="false"
+                aria-label="Slide 3: Clinical Diagnostics"
+                data-slide="2"
+              >
+                <span class="dot-indicator" aria-hidden="true"></span>
+                <span class="dot-label">Clinical Checks</span>
+                <span class="dot-timer-bar" aria-hidden="true"
+                  ><span class="dot-timer-fill"></span
+                ></span>
+              </button>
+            </div>
+
+            <div class="hero-arrows">
+              <button
+                type="button"
+                class="hero-arrow-btn prev"
+                id="heroPrevBtn"
+                aria-label="Previous slide"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
+              <button
+                type="button"
+                class="hero-arrow-btn next"
+                id="heroNextBtn"
+                aria-label="Next slide"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="mq" aria-hidden="true">
+          <div>
+            <span>Genuine medicines</span><i>✚</i
+            ><span>Licensed pharmacists</span><i>✚</i
+            ><span>Walk-in health checks</span><i>✚</i
+            ><span>Clear dosage guidance</span><i>✚</i>
+            <span>Genuine medicines</span><i>✚</i
+            ><span>Licensed pharmacists</span><i>✚</i
+            ><span>Walk-in health checks</span><i>✚</i
+            ><span>Clear dosage guidance</span><i>✚</i>
+          </div>
+        </div>
+
+        <section class="rv" id="medicines">
+          <div class="sec-head">
+            <span class="tag">Curated Formulary</span>
+            <h2 class="sh">Shop by category</h2>
+          </div>
+          <div class="cats">
+            <!-- 1. Pain Relief: Lucide Pill Icon -->
+            <a class="cat cat-pain" href="medicines.html#pain">
+              <div class="cat-top">
+                <div class="cat-icon-badge" aria-hidden="true">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"
+                    ></path>
+                    <path d="m8.5 8.5 7 7"></path>
+                  </svg>
+                </div>
+                <span class="cat-arrow" aria-hidden="true">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </span>
+              </div>
+              <div class="cat-content">
+                <span class="cat-meta">Fever &amp; Relief</span>
+                <strong class="cat-title">Pain Relief</strong>
+              </div>
+            </a>
+
+            <!-- 2. Cold & Allergy: Feather/Lucide Wind Airways Icon -->
+            <a class="cat cat-cold" href="medicines.html#cold">
+              <div class="cat-top">
+                <div class="cat-icon-badge" aria-hidden="true">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M17.7 7.7A2.5 2.5 0 1 1 19 12H2"></path>
+                    <path d="M12.6 19.4A2 2 0 1 0 14 16H2"></path>
+                    <path d="M9.8 4.6A2 2 0 1 1 11 8H2"></path>
+                  </svg>
+                </div>
+                <span class="cat-arrow" aria-hidden="true">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </span>
+              </div>
+              <div class="cat-content">
+                <span class="cat-meta">Decongestants</span>
+                <strong class="cat-title">Cold &amp; Allergy</strong>
+              </div>
+            </a>
+
+            <!-- 3. Diabetes Care: Feather/Lucide Droplet Glucose Icon -->
+            <a class="cat cat-diabetes" href="medicines.html#diabetes">
+              <div class="cat-top">
+                <div class="cat-icon-badge" aria-hidden="true">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"
+                    ></path>
+                  </svg>
+                </div>
+                <span class="cat-arrow" aria-hidden="true">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </span>
+              </div>
+              <div class="cat-content">
+                <span class="cat-meta">Blood Glucose</span>
+                <strong class="cat-title">Diabetes Care</strong>
+              </div>
+            </a>
+
+            <!-- 4. Stomach: Feather/Lucide Shield-Check Digestive Defense Icon -->
+            <a class="cat cat-stomach" href="medicines.html#stomach">
+              <div class="cat-top">
+                <div class="cat-icon-badge" aria-hidden="true">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
+                    ></path>
+                    <path d="m9 12 2 2 4-4"></path>
+                  </svg>
+                </div>
+                <span class="cat-arrow" aria-hidden="true">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </span>
+              </div>
+              <div class="cat-content">
+                <span class="cat-meta">Digestive Health</span>
+                <strong class="cat-title">Stomach</strong>
+              </div>
+            </a>
+
+            <!-- 5. Vitamins: Feather/Lucide Sun Immunity Vitality Icon -->
+            <a class="cat cat-vitamins" href="medicines.html#vitamins">
+              <div class="cat-top">
+                <div class="cat-icon-badge" aria-hidden="true">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <circle cx="12" cy="12" r="4"></circle>
+                    <path d="M12 2v2"></path>
+                    <path d="M12 20v2"></path>
+                    <path d="m4.93 4.93 1.41 1.41"></path>
+                    <path d="m17.66 17.66 1.41 1.41"></path>
+                    <path d="M2 12h2"></path>
+                    <path d="M20 12h2"></path>
+                    <path d="m6.34 17.66-1.41 1.41"></path>
+                    <path d="m19.07 4.93-1.41 1.41"></path>
+                  </svg>
+                </div>
+                <span class="cat-arrow" aria-hidden="true">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </span>
+              </div>
+              <div class="cat-content">
+                <span class="cat-meta">Daily Immunity</span>
+                <strong class="cat-title">Vitamins</strong>
+              </div>
+            </a>
+
+            <!-- 6. Skin Care: Feather/Lucide Sparkles Radiant Care Icon -->
+            <a class="cat cat-skin" href="medicines.html#skin">
+              <div class="cat-top">
+                <div class="cat-icon-badge" aria-hidden="true">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"
+                    ></path>
+                    <path d="M5 3v4"></path>
+                    <path d="M19 17v4"></path>
+                    <path d="M3 5h4"></path>
+                    <path d="M17 19h4"></path>
+                  </svg>
+                </div>
+                <span class="cat-arrow" aria-hidden="true">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </span>
+              </div>
+              <div class="cat-content">
+                <span class="cat-meta">Dermatology</span>
+                <strong class="cat-title">Skin Care</strong>
+              </div>
+            </a>
+          </div>
+        </section>
+
+        <section class="rv svc-flow-section" id="services">
+          <div class="svc-flow-head">
+            <span class="tag">Rx · 03 Healthcare Continuum</span>
+            <h2 class="sh" style="margin: 10px auto 12px">
+              Professional care, beyond medicines
+            </h2>
+            <p class="lead">
+              A complete clinical care continuum — personalized pharmacist
+              consultation, walk-in vital screenings, safe dosage guidance, and
+              proactive wellness support.
+            </p>
+          </div>
+
+          <div class="flow-grid">
+            <!-- Pillar 1: Medication Counseling -->
+            <a
+              href="services.html"
+              class="flow-card flow-card-1"
+              aria-label="Medication Counseling · Clinical Consultation"
+            >
+              <div class="flow-white-shell">
+                <div class="flow-shelf-row">
+                  <div class="flow-badge tail-down">
+                    <span class="num">01</span>
+                    <span class="sub">Counseling</span>
+                  </div>
+                  <div class="flow-icon-tab">
+                    <svg viewBox="0 0 48 48" aria-hidden="true">
+                      <path
+                        d="M24 6L6 22h5v18a2 2 0 002 2h22a2 2 0 002-2V22h5L24 6zm0 10a2 2 0 012 2v2h2a2 2 0 110 4h-2v2a2 2 0 11-4 0v-2h-2a2 2 0 110-4h2v-2a2 2 0 012-2z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <div class="flow-body">
+                  <div class="flow-kicker">
+                    <span class="plus-badge">+</span
+                    ><span>CLINICAL CONSULT</span>
+                  </div>
+                  <h3>Medication Counseling</h3>
+                  <p>
+                    Get the right information and take your medicine safely.
+                    Certified pharmacists review prescriptions, verify dosage
+                    schedules, and check for negative drug interactions.
+                  </p>
+                  <div class="flow-meta">
+                    <div class="flow-pills">
+                      <span class="flow-pill">1-on-1 Review</span>
+                      <span class="flow-pill">Safety Check</span>
+                    </div>
+                    <span class="flow-action">Explore <i>→</i></span>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <!-- Pillar 2: Basic Health Checks -->
+            <a
+              href="services.html"
+              class="flow-card flow-card-2"
+              aria-label="Basic Health Checks · Vital Screenings"
+            >
+              <div class="flow-white-shell">
+                <div class="flow-shelf-row">
+                  <div class="flow-icon-tab">
+                    <svg viewBox="0 0 48 48" aria-hidden="true">
+                      <path
+                        d="M24 10a16 16 0 1016 16A16 16 0 0024 10zm1 16.5l-4-2.5V17a1.5 1.5 0 013 0v5.8l3 1.9a1.5 1.5 0 01-2 1.8zM9.5 7.5a2.5 2.5 0 013.5 0l3 3a2.5 2.5 0 11-3.5 3.5l-3-3a2.5 2.5 0 010-3.5zm29 0a2.5 2.5 0 010 3.5l-3 3a2.5 2.5 0 11-3.5-3.5l3-3a2.5 2.5 0 013.5 0zM12 40a2 2 0 012.8 0L17 42.2a2 2 0 01-2.8 2.8L12 42.8A2 2 0 0112 40zm24 0a2 2 0 010 2.8l-2.2 2.2a2 2 0 01-2.8-2.8l2.2-2.2a2 2 0 012.8 0z"
+                      />
+                    </svg>
+                  </div>
+                  <div class="flow-badge tail-down">
+                    <span class="num">02</span>
+                    <span class="sub">Screenings</span>
+                  </div>
+                </div>
+                <div class="flow-body">
+                  <div class="flow-kicker">
+                    <span class="plus-badge">+</span
+                    ><span>WALK-IN SCREENINGS</span>
+                  </div>
+                  <h3>Basic Health Checks</h3>
+                  <p>
+                    Know your numbers and stay in control. Convenient walk-in
+                    blood pressure monitoring, blood glucose screenings, and
+                    vital tracking with instant pharmacist consultation.
+                  </p>
+                  <div class="flow-meta">
+                    <div class="flow-pills">
+                      <span class="flow-pill">Blood Pressure</span>
+                      <span class="flow-pill">Glucose Screen</span>
+                    </div>
+                    <span class="flow-action">Explore <i>→</i></span>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <!-- Pillar 3: Medicine Use Guidance -->
+            <a
+              href="services.html"
+              class="flow-card flow-card-3"
+              aria-label="Medicine Use Guidance · Safe Usage Protocols"
+            >
+              <div class="flow-white-shell">
+                <div class="flow-body">
+                  <div class="flow-kicker">
+                    <span class="plus-badge">+</span
+                    ><span>SAFE USAGE PROTOCOL</span>
+                  </div>
+                  <h3>Medicine Use Guidance</h3>
+                  <p>
+                    Use your medicines the right way. We provide clear
+                    administration guidance, timing recommendations, and
+                    side-effect precautions so you get maximum benefit from
+                    every dose.
+                  </p>
+                  <div class="flow-meta">
+                    <div class="flow-pills">
+                      <span class="flow-pill">Dosage Protocols</span>
+                      <span class="flow-pill">Timing Advice</span>
+                    </div>
+                    <span class="flow-action">Explore <i>→</i></span>
+                  </div>
+                </div>
+                <div class="flow-shelf-row">
+                  <div class="flow-icon-tab">
+                    <svg viewBox="0 0 48 48" aria-hidden="true">
+                      <path
+                        d="M21 11h14a9 9 0 019 9c0 3.8-2.3 7-5.8 8.4L37 34l-5-2.5H25a9 9 0 01-9-9 9 9 0 010-.2z"
+                        opacity="0.55"
+                      />
+                      <path
+                        d="M8 18h16a8 8 0 018 8v4a8 8 0 01-8 8h-4l-6 5v-5H8a8 8 0 01-8-8v-4a8 8 0 018-8zm4 7a2 2 0 100 4 2 2 0 000-4zm6 0a2 2 0 100 4 2 2 0 000-4zm6 0a2 2 0 100 4 2 2 0 000-4z"
+                      />
+                    </svg>
+                  </div>
+                  <div class="flow-badge tail-up">
+                    <span class="num">03</span>
+                    <span class="sub">Guidance</span>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <!-- Pillar 4: Wellness & Prevention -->
+            <a
+              href="services.html"
+              class="flow-card flow-card-4"
+              aria-label="Wellness &amp; Prevention · Proactive Health"
+            >
+              <div class="flow-white-shell">
+                <div class="flow-body">
+                  <div class="flow-kicker">
+                    <span class="plus-badge">+</span
+                    ><span>PROACTIVE WELLNESS</span>
+                  </div>
+                  <h3>Wellness &amp; Prevention</h3>
+                  <p>
+                    Practical tips and proactive support for a healthier
+                    routine. From time-honored botanical remedies and vitamins
+                    to personalized immune support for everyday family vitality.
+                  </p>
+                  <div class="flow-meta">
+                    <div class="flow-pills">
+                      <span class="flow-pill">Herbal Remedies</span>
+                      <span class="flow-pill">Immune Support</span>
+                    </div>
+                    <span class="flow-action">Explore <i>→</i></span>
+                  </div>
+                </div>
+                <div class="flow-shelf-row">
+                  <div class="flow-badge tail-up">
+                    <span class="num">04</span>
+                    <span class="sub">Prevention</span>
+                  </div>
+                  <div class="flow-icon-tab">
+                    <svg viewBox="0 0 48 48" aria-hidden="true">
+                      <path
+                        d="M6 12a4 4 0 014-4h28a4 4 0 014 4v24a4 4 0 01-4 4H10a4 4 0 01-4-4V12zm4 0l14 10 14-10H10zm28 24V16.8L25.2 26.6a2 2 0 01-2.4 0L10 16.8V36h28z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Service Assurance Bar -->
+          <div class="svc-assurance-bar">
+            <div class="svc-assurance-info">
+              <span class="pulse-dot" aria-hidden="true"></span>
+              <div>
+                <strong
+                  >Walk-in Pharmacy &amp; Consultation Hub · Bole Road, Addis
+                  Ababa</strong
+                >
+                <p>
+                  No appointment required for vitals screenings and dosage
+                  reviews. Open daily.
+                </p>
+              </div>
+            </div>
+            <div class="svc-assurance-actions">
+              <a href="tel:+251911086624" class="svc-action-btn primary"
+                >Call Pharmacist</a
+              >
+              <a href="services.html" class="svc-action-btn outline"
+                >All Services →</a
+              >
+            </div>
+          </div>
+        </section>
+
+        <section class="rv" id="about">
+          <div class="about">
+            <div>
+              <span
+                class="tag"
+                style="color: var(--mint); letter-spacing: 0.06em"
+                >Our Heritage &amp; Care</span
+              >
+              <h2>Trusted care for a healthier life</h2>
+              <p
+                style="
+                  font-size: 16.5px;
+                  line-height: 1.6;
+                  color: rgba(255, 255, 255, 0.9);
+                  margin-bottom: 14px;
+                "
+              >
+                Serving families across Addis Ababa with authentic
+                pharmaceuticals, licensed clinical consultations, and
+                compassionate community care.
+              </p>
+              <p
+                style="
+                  font-size: 14.5px;
+                  line-height: 1.6;
+                  color: rgba(255, 255, 255, 0.75);
+                  margin-bottom: 22px;
+                "
+              >
+                We believe healthcare should empower rather than confuse. Our
+                pharmacists take the time to review dosages, explain
+                side-effects, and answer every question without rushing.
+              </p>
+              <div
+                style="
+                  display: flex;
+                  gap: 16px;
+                  flex-wrap: wrap;
+                  margin-bottom: 26px;
+                  font-size: 13.5px;
+                  font-weight: 600;
+                  color: #ffffff;
+                "
+              >
+                <span>✓ 100% Verified Sourcing</span>
+                <span>✓ Monitored Cold-Chain</span>
+                <span>✓ On-Call Holidays</span>
+              </div>
+              <a class="btn light" href="about.html"
+                >Our story &amp; standards →</a
+              >
+            </div>
+            <img
+              src="images/brand-still.jpg"
+              alt="Tsehaye Unique Pharmacy — Better Health Starts Here"
+              loading="lazy"
+            />
+          </div>
+        </section>
+
+        <section class="rv" id="tips">
+          <div class="sec-head">
+            <span class="tag">Daily Health Guides</span>
+            <h2 class="sh">Small steps, big benefits</h2>
+            <p class="lead">
+              Practical, pharmacist-reviewed guidance to help your household
+              stay healthy every day.
+            </p>
+          </div>
+          <div class="guides">
+            <a class="g g-mint" href="health-tips.html">
+              <div class="g-head">
+                <span class="g-badge mint">Prescription Guidance</span>
+                <span class="g-icon" aria-hidden="true">💊</span>
+              </div>
+              <h3>Can I take antibiotics for a cold?</h3>
+              <p>
+                Colds are viral, which antibiotics cannot cure. Discover why
+                proper symptom relief is the safest approach and how completing
+                prescribed courses prevents dangerous resistance.
+              </p>
+              <span class="g-link">Read guide <i>→</i></span>
+            </a>
+            <a class="g g-sky" href="health-tips.html">
+              <div class="g-head">
+                <span class="g-badge sky">Hydration &amp; Vitals</span>
+                <span class="g-icon" aria-hidden="true">💧</span>
+              </div>
+              <h3>How much water should I drink?</h3>
+              <p>
+                Needs shift with climate and altitude in Addis Ababa. Learn
+                simple self-checks like urine color and why taking oral
+                medications with a full glass of water protects your stomach.
+              </p>
+              <span class="g-link">Read guide <i>→</i></span>
+            </a>
+            <a class="g g-amber" href="health-tips.html">
+              <div class="g-head">
+                <span class="g-badge amber">Dosage Protocol</span>
+                <span class="g-icon" aria-hidden="true">⏰</span>
+              </div>
+              <h3>I missed a dose. What now?</h3>
+              <p>
+                Never double up tablets. Understand the universal clinical rule
+                for missed doses, timing cutoffs for different drug classes, and
+                when to call our on-duty pharmacist.
+              </p>
+              <span class="g-link">Read guide <i>→</i></span>
+            </a>
+          </div>
+        </section>
+
+        <div class="loc rv" id="contact">
+          <div class="loc-content">
+            <span class="loc-pill">● Pharmacist On Duty</span>
+            <h2>Bole Road, Addis Ababa</h2>
+            <p>Open now · Mon–Sat 8:00–20:00 · Sun 9:00–17:00</p>
+          </div>
+          <div class="acts">
+            <a class="btn primary-dark" href="tel:+251911086624"
+              >Call +251 91 108 6624</a
+            >
+            <a
+              class="btn light"
+              href="https://maps.google.com/?q=Bole+Road+Addis+Ababa"
+              target="_blank"
+              rel="noopener"
+              >Directions →</a
+            >
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <div id="ftr" data-include="footer.html"></div>
+    <script src="site.js"></script>
   </body>
 </html>
-

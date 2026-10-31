@@ -1,20 +1,56 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# Tsehay Unique Pharmacy (PharmaTsehaye)
 
-# Run and deploy your AI Studio app
+Official website for **Tsehay Unique Pharmacy** — Quality medicines, trusted healthcare advice, and community wellness services in Addis Ababa, Ethiopia.
 
-This contains everything you need to run your app locally.
+## 🌟 Features
 
-View your app in AI Studio: https://ai.studio/apps/01c5ccb5-7193-417d-8cbc-c83b16b791a6
+- **Home Page**: Responsive hero slideshow, featured categories, services overview, and testimonials.
+- **Medicines & Products**: Catalog of genuine prescription and OTC medications, baby care, personal care, and wellness items.
+- **Healthcare Services**: Prescription refills, pharmacist consultations, blood pressure & vitals screening, chronic care support.
+- **Health Tips & Blog**: Curated wellness guides, medication safety advice, seasonal health articles.
+- **About & Contact**: Location details, working hours, interactive inquiry forms, and contact information.
 
-## Run Locally
+## 📁 Project Structure
 
-**Prerequisites:**  Node.js
+```
+├── about.html
+├── contact.html
+├── health-tips.html
+├── index.html
+├── medicines.html
+├── services.html
+├── banner.html
+├── footer.html
+├── head.html
+├── header.html
+├── site.js
+├── style.css
+├── inner.css
+├── css/
+│   ├── base.css
+│   ├── components.css
+│   ├── footer.css
+│   ├── header.css
+│   ├── home.css
+│   ├── pages.css
+│   ├── responsive.css
+│   └── variables.css
+└── images/
+```
 
+## 🚀 Getting Started
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+To view the website locally, open `index.html` directly in your browser or run a local web server:
+
+### VS Code Live Server
+Open the project in VS Code and click **Go Live** on the status bar.
+
+### Python
+```bash
+python3 -m http.server 8000
+```
+
+### Node.js
+```bash
+npx serve .
+```

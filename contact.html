@@ -1,0 +1,21 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css"><title>Contact | Tsheaye Unique Pharmacy</title><meta name="description" content="Visit, call or message Tsheaye Unique Pharmacy on Bole Road, Addis Ababa."></head>
+<body data-page="contact.html"><div class="wrap"><div id="hdr" data-include="header.html"></div><main>
+<div class="ph"><div><span class="tag">Direct Consultations &amp; Care</span><h1>Visit, call or message us.</h1><p>Bole Road, Addis Ababa. A licensed pharmacist is always on call.</p></div><img src="images/tsehay-sign-sky.png" alt="Tsehay Unique Pharmacy official sign under blue skies - Bole Road Addis Ababa"></div>
+<section><div class="cg">
+<div class="card contact-storefront-card"><span class="tag">Bole Road Pharmacy Hub</span><h2 style="font-size:32px;letter-spacing:-0.02em">Find us</h2><p class="lead" style="margin-top:6px;font-size:16px">Bole Road, Addis Ababa · Licensed Community Pharmacy</p>
+<p style="font-size:14.5px;color:var(--mute);margin:10px 0 16px;line-height:1.6">Conveniently situated with roadside parking, step-free access, and dedicated private consultation areas for unhurried dosage reviews and vital screenings.</p>
+<table class="hrs" id="hrs"><tr data-d="1,2,3,4,5,6"><td>Monday – Saturday</td><td>8:00 AM – 8:00 PM</td></tr><tr data-d="0"><td>Sunday</td><td>9:00 AM – 5:00 PM</td></tr><tr><td>Holidays</td><td>On-call Pharmacist (+251 91 108 6624)</td></tr></table>
+<div class="acts"><a class="btn primary-dark" href="tel:+251911086624">Call +251 91 108 6624</a><a class="btn light" href="https://wa.me/251911086624" target="_blank" rel="noopener">WhatsApp Chat</a><a class="btn light" href="https://maps.google.com/?q=Bole+Road+Addis+Ababa" target="_blank" rel="noopener">Directions →</a></div></div>
+<form class="card contact-form-card" id="f"><span class="tag">Digital Consultation Desk</span><h2 style="font-size:32px;letter-spacing:-0.02em">Ask a pharmacist</h2>
+<p style="font-size:14.5px;color:var(--mute);margin:8px 0 16px;line-height:1.55">Have questions about stock, dosage timing, or an upcoming prescription? Send a message directly to our on-duty clinical team.</p>
+<label for="n">Your name</label><input id="n" required autocomplete="name" placeholder="Enter your full name">
+<label for="t">What do you need?</label><select id="t"><option>Check medicine availability</option><option>Medication question</option><option>Health check visit</option><option>Something else</option></select>
+<label for="m">Message</label><textarea id="m" placeholder="Medicine name, strength, dosage schedule, or your health question"></textarea>
+<div class="acts"><button class="btn" style="background:#25d366;color:#ffffff;font-weight:700" type="submit">💬 Send on WhatsApp</button></div>
+<p class="note" style="margin-top:14px">This opens WhatsApp with your inquiry pre-formatted for our pharmacist. You can also send a photo of your prescription directly in the chat. For severe medical emergencies, please visit the nearest hospital emergency room immediately.</p></form>
+</div></section></main></div><div id="ftr" data-include="footer.html"></div><script src="site.js"></script>
+<script>
+document.querySelectorAll('#hrs tr[data-d]').forEach(function(r){if(r.dataset.d.split(',').indexOf(String(TS_DAY))>-1)r.className='today'});
+var it=new URLSearchParams(location.search).get('item');if(it){document.getElementById('m').value='Is '+it+' in stock?'}
+document.getElementById('f').onsubmit=function(e){e.preventDefault();var t='Hello Tsheaye Pharmacy, I am '+n.value+'. '+document.getElementById('t').value+': '+m.value;open('https://wa.me/251911086624?text='+encodeURIComponent(t),'_blank')};
+</script></body></html>

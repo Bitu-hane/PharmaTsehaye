@@ -1,8 +1,11 @@
-node_modules/
-build/
-dist/
-coverage/
+# Operating System Files
 .DS_Store
-*.log
-.env*
-!.env.example
+Thumbs.db
+
+# Archives and Backups
+*.zip
+tsehaye2/
+
+# Loose root image duplicates (organized in images/)
+/*.jpg
+/*.png
