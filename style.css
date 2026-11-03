@@ -2789,6 +2789,17 @@ details[open] summary::after {
   line-height: 1.6;
 }
 
+.ans ul {
+  margin: 0;
+  padding-left: 20px;
+  display: grid;
+  gap: 8px;
+}
+
+.ans li {
+  line-height: 1.5;
+}
+
 .ans strong {
   color: var(--ink);
 }
@@ -3887,11 +3898,11 @@ footer a:hover {
   transform: translateZ(16px);
 }
 
-/* 3. Pill Biomechanics (5 Steps) */
+/* 3. Pill Biomechanics (4 Steps) */
 .biomechanics-grid-3d {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 16px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
   transform-style: preserve-3d;
 }
 
@@ -4028,11 +4039,9 @@ footer a:hover {
 
 @media (max-width: 1040px) {
   .chrono-grid-3d,
-  .bp-spectrum-3d {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  .bp-spectrum-3d,
   .biomechanics-grid-3d {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
